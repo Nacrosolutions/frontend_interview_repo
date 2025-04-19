@@ -1,0 +1,26 @@
+function chainCalculator(inital_value=0) {
+    
+    let value=inital_value;
+    
+    const app ={
+        
+        add (n)  {
+            value+=n;
+            return app;
+        },
+               subtract (n)  {
+            value-=n;
+            return app;
+        },
+        
+        getResuts() {
+            
+            return value;
+        }
+        
+        
+    }
+    return app;
+}
+
+console.log(chainCalculator().add(10).add(20).getResuts())
