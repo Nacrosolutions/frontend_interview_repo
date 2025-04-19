@@ -1,0 +1,23 @@
+Sequential Promises
+
+Sequential = One thing after another, in order.
+
+A Promise is a JavaScript object that represents a value you’ll get in the future (after an async operation finishes).
+
+🧩 Putting it Together: Sequential Promises
+Say you want to:
+
+Fetch user
+
+Then fetch user’s posts
+
+Then fetch comments on the first post
+
+You must do it in order, because the next step depends on the previous:
+
+```js
+async function runSequential() {
+  const user = await fetchUser();          // must wait
+  const posts = await fetchPosts(user.id); // depends on user
+  const comments = await fetchComments(posts[0].id); // depends on posts
+}
