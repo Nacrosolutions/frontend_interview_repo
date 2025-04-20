@@ -1,0 +1,19 @@
+Array.prototype.myMap=function (callback) {
+    
+    let results=[];
+    
+    for(let i=0;i < this.length;i++) {
+        
+        if(this.hasOwnProperty(i)) {
+            const mappedValue=callback(this[i],i,this);
+            results.push(mappedValue)
+        }
+        
+    }
+    return results;
+    
+    
+}
+
+const a =[1,2,3,4];
+console.log(a.myMap(el=>el*2));
