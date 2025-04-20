@@ -1,0 +1,19 @@
+Array.prototype.myFilter=function (callback) {
+    
+    let results=[];
+    
+    for(let i=0;i<this.length;i++) {
+  if(this.hasOwnProperty(i) && callback(this[i],i,this)) {
+      results.push(this[i])
+  }
+
+    }
+    
+    return results;
+    
+}
+
+
+const a=[1,2,3,4,5];
+
+console.log(a.myFilter(el=>el%2==0))
